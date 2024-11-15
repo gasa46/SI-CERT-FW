@@ -11,8 +11,14 @@ if response.status_code == 200:
     # Use a regular expression to find all URLs
     urls = re.findall(r'https?://[^\s]+', content)
     
-    # Print the extracted URLs
+    # Print the extracted URLs    
+with open('SI-CERT-last.txt', 'w') as file:
     for url in urls:
-        print(url)
-else:
-    print(f"Failed to retrieve content: {response.status_code}")
+        file.write(url + '\n')
+print("Extracted URLs have been saved to SI-CERT-last.txt")
+
+try:
+    response = requests.get('https://www.cert.si/misp/urls/last.txt', timeout=10)
+    response.raise_for_status()
+except requests.RequestException as e:
+    print(f"Error fetching the URL: {e}")
