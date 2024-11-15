@@ -43,4 +43,4 @@ jobs:
           git config user.email "gasa46@gmail.com"
           git add .
           git commit -m "Test"
-          git push origin master
+          git push -f origin master
