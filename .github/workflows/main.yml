@@ -1,0 +1,25 @@
+name: Run URL Extraction Script
+
+on:
+  schedule:
+    - cron: '0 * * * *' # every hour
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install requirements
+        run: |
+          pip install requests
+
+      - name: Run script
+        run: |
+          python Si-Cert-Extract.py
