@@ -26,8 +26,8 @@ jobs:
       
       - name: Commit Output File
         run: |
-          git config --global gasa46
-          git config --global gasa46@gmail.com
-          git add SI-CERT-last.txt
-          git commit -m "Update extracted URLs file"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "crongenerated"
           git push
