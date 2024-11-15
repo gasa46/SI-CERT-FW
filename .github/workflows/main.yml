@@ -23,3 +23,11 @@ jobs:
       - name: Run script
         run: |
           python Si-Cert-Extract.py
+      
+      - name: Commit Output File
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add SI-CERT-last.txt
+          git commit -m "Update extracted URLs file"
+          git push
