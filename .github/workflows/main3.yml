@@ -41,6 +41,6 @@ jobs:
         run: |
           git config user.name "gasa46"
           git config user.email "gasa46@gmail.com"
-          git add -A SI-CERT-last.txt
+          git add SI-CERT-last.txt
           git commit -m "Manual"
           git push
