@@ -42,5 +42,4 @@ jobs:
           git config user.name "gasa46"
           git config user.email "gasa46@gmail.com"
           git add .
-          git commit -m "Test"
           git push -f origin master
