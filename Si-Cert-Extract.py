@@ -12,7 +12,7 @@ if response.status_code == 200:
     urls = re.findall(r'https?://[^\s]+', content)
     
     # Print the extracted URLs    
-with open('SI-CERT-last1.txt', 'w') as file:
+with open('SI-CERT-last.txt', 'w') as file:
     for url in urls:
         file.write(url + '\n')
 print("Extracted URLs have been saved to SI-CERT-last.txt")
